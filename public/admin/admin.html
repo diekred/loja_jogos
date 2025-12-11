@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>Painel Administrativo</div>
+        <a href="../loja/catalogo.html" class="header-link">Voltar para Loja</a>
+    </header>
+
+    <div class="container" style="margin-bottom: 0; padding: 15px; background: transparent; box-shadow: none; text-align: right;">
+        <a href="pedidos.html" class="btn-purple" style="text-decoration: none; margin-right: 10px;">📋 Gerenciar Pedidos</a>
+        <a href="relatorios.html" class="btn-purple" style="text-decoration: none;">📈 Ver Relatórios</a>
+    </div>
+
+    <div class="container admin-panel">
+        <div class="form-section">
+            <h3 id="formTitulo">Adicionar Jogo</h3>
+            <form id="formJogo">
+                <input type="hidden" id="jogoId">
+                <label>Título:</label> <input type="text" id="titulo" required>
+                
+                <label>Preço (R$):</label> 
+                <input type="text" id="preco" placeholder="0,00" oninput="mascaraMoeda(this)" required>
+                
+                <label>URL Imagem:</label> <input type="text" id="imgUrl" placeholder="http://...">
+                <label>Categorias:</label>
+                <div id="containerCategorias" class="checkbox-list">Carregando...</div>
+                <div style="margin-top: 15px;">
+                    <button type="submit" id="btnSalvar">Cadastrar</button>
+                    <button type="button" id="btnCancelar" class="hidden">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        <div class="list-section">
+            <h3>Jogos Cadastrados</h3>
+            <table id="tabelaJogos"></table>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 30px;">
+        <h3>Gerenciar Usuários</h3>
+        <table id="tabelaUsuarios">
+            <thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>Status</th><th>Ação</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

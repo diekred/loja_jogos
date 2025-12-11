@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatórios Gerenciais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>Relatórios</div>
+        <a href="admin.html" class="header-link">Voltar ao Painel</a>
+    </header>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2>Relatórios de Vendas</h2>
+            <button onclick="window.print()" class="btn-purple">🖨️ Imprimir Relatórios</button>
+        </div>
+        
+        <p><strong>Emissão:</strong> <span id="dataEmissao"></span></p>
+
+        <hr style="margin: 20px 0;">
+
+        <h3>1. Faturamento Mensal</h3>
+        <table>
+            <thead>
+                <tr style="background: #eee;">
+                    <th>Mês/Ano</th>
+                    <th>Pedidos (Qtd)</th>
+                    <th>Receita Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabMensal"><tr><td colspan="3">Carregando...</td></tr></tbody>
+        </table>
+
+        <br><br>
+
+        <h3>2. Desempenho por Categoria</h3>
+        <table>
+            <thead>
+                <tr style="background: #eee;">
+                    <th>Categoria</th>
+                    <th>Itens Vendidos</th>
+                    <th>Faturamento</th>
+                </tr>
+            </thead>
+            <tbody id="tabCategoria"><tr><td colspan="3">Carregando...</td></tr></tbody>
+        </table>
+    </div>
+
+    <script src="relatorios.js"></script>
+</body>
+</html>

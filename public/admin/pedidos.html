@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Pedidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>Gerência de Pedidos</div>
+        <a href="admin.html" class="header-link">Voltar ao Painel</a>
+    </header>
+
+    <div class="container">
+        <h3>Pedidos dos Clientes</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Itens</th>
+                    <th>Total</th>
+                    <th>Status / Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaPedidos">
+                <tr><td colspan="5">Carregando...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modalEdicao" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Editar Itens do Pedido #<span id="modalPedidoId"></span></h3>
+            <p>Selecione os jogos deste pedido:</p>
+            
+            <div id="listaJogosModal" class="checkbox-list" style="max-height: 300px;">
+                Carregando jogos...
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" id="btnFecharModal" style="background:#6c757d;">Cancelar</button>
+                <button type="button" id="btnSalvarItens">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="pedidos.js"></script>
+</body>
+</html>
