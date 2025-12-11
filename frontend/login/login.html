@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - GameStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="login-wrapper">
+        <div class="login-card">
+            <h2 id="formTitle">Bem-vindo Gamer</h2>
+            
+            <form id="formLogin">
+                <input type="text" id="email" placeholder="E-mail" required>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <button type="submit" class="btn-primary">ENTRAR</button>
+            </form>
+
+            <form id="formCadastro" class="hidden">
+                <input type="text" id="cadNome" placeholder="Nome Completo" required>
+                <input type="text" id="cadCpf" placeholder="CPF" oninput="mascaraCPF(this)" required>
+                <input type="email" id="cadEmail" placeholder="E-mail" required>
+                <input type="password" id="cadSenha" placeholder="Senha" required>
+                <button type="submit" class="btn-success">CRIAR CONTA</button>
+            </form>
+
+            <p class="toggle-text">
+                <span id="toggleLink">Não tem conta? Cadastre-se</span>
+            </p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

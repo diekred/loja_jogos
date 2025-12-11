@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho - GameStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="brand">🛒 Meu Carrinho</div>
+        <div class="header-actions">
+            <a href="../catalogo/catalogo.html" class="header-link">⬅ Voltar à Loja</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-section">
+            <h3 style="margin-top:0">Itens Selecionados</h3>
+            <div id="itensCarrinho"></div>
+            
+            <div class="cart-total">
+                <span>Total a Pagar:</span>
+                <span id="totalValor">0.00</span>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <h3>Forma de Pagamento</h3>
+            
+            <div class="payment-selector">
+                <label class="payment-option">
+                    <input type="radio" name="pagamento" value="PIX" onchange="mudarPagamento('PIX')">
+                    <div class="payment-card">
+                        <span style="font-size: 2rem;">💠</span>
+                        <span>PIX (Imediato)</span>
+                    </div>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="pagamento" value="CARTAO" onchange="mudarPagamento('CARTAO')">
+                    <div class="payment-card">
+                        <span style="font-size: 2rem;">💳</span>
+                        <span>Cartão de Crédito</span>
+                    </div>
+                </label>
+            </div>
+
+            <div id="contentPix" class="hidden" style="text-align: center; margin-top: 20px;">
+                <div style="background: white; padding: 20px; display: inline-block; border-radius: 10px;">
+                    <img id="imgQrCode" src="" alt="QR Code" style="width: 150px; height: 150px;">
+                </div>
+                <p style="color: var(--success); margin-top: 10px;">Escaneie para pagar</p>
+            </div>
+
+            <div id="contentCartao" class="hidden">
+                <div id="listaCartoesSalvos"></div>
+                
+                <div class="credit-card-form">
+                    <p style="color: var(--primary); font-weight: bold; margin-bottom: 15px;">Novo Cartão:</p>
+                    <input type="text" id="cartaoNumero" placeholder="Número do Cartão (0000 0000 0000 0000)" maxlength="19" oninput="mascaraCartao(this)">
+                    <input type="text" id="cartaoNome" placeholder="Nome Impresso no Cartão">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <input type="text" id="cartaoValidade" placeholder="Validade (MM/AA)" maxlength="5" oninput="mascaraData(this)">
+                        <input type="text" id="cartaoCvv" placeholder="CVV (3 dígitos)" maxlength="3">
+                    </div>
+
+                    <label style="display: flex; align-items: center; gap: 10px; margin-top: 10px; cursor: pointer; color: white;">
+                        <input type="checkbox" id="salvarCartao" style="width: 20px; height: 20px;"> 
+                        Salvar cartão para a próxima compra
+                    </label>
+                </div>
+            </div>
+
+            <button id="btnFinalizar" class="btn-add" style="width: 100%; margin-top: 30px; padding: 15px; font-size: 1.1rem;">
+                FINALIZAR PEDIDO R$ <span id="btnTotalValor">0.00</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="carrinho.js"></script>
+</body>
+</html>

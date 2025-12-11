@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Relatórios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="brand">🎮 Painel Admin</div>
+        
+        <nav class="nav-menu">
+            <a href="../jogos/jogos.html" class="nav-item">Jogos</a>
+            <a href="../usuarios/usuarios.html" class="nav-item">Usuários</a>
+            <a href="../pedidos/pedidos.html" class="nav-item">Pedidos</a>
+            <a href="../relatorios/relatorios.html" class="nav-item active">Relatórios</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="../catalogo/catalogo.html" class="btn-store">🏠 Ir para Loja</a>
+            <a href="../../login/login.html" class="btn-logout">Sair ➔</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin:0; color:var(--bg-panel);">📊 Relatórios de Vendas</h2>
+            <button onclick="window.print()" class="btn-itens">🖨️ Imprimir</button>
+        </div>
+        
+        <p style="color:#666;">Data de emissão: <span id="dataEmissao" style="font-weight:bold;"></span></p>
+        <hr style="margin: 20px 0; border:0; border-top:1px solid #ddd;">
+
+        <h3>1. Faturamento Mensal</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mês/Ano</th>
+                    <th>Qtd. Pedidos</th>
+                    <th>Receita Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabMensal"><tr><td colspan="3">Carregando...</td></tr></tbody>
+        </table>
+
+        <br><br>
+
+        <h3>2. Desempenho por Categoria</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Itens Vendidos</th>
+                    <th>Faturamento</th>
+                </tr>
+            </thead>
+            <tbody id="tabCategoria"><tr><td colspan="3">Carregando...</td></tr></tbody>
+        </table>
+    </div>
+
+    <script src="relatorios.js"></script>
+</body>
+</html>
