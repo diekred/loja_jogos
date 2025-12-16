@@ -44,3 +44,5 @@ Senti mais facilidade no Backend, pois a lógica é mais direta e organizada, pr
 3. Execute o script `Documentacao/script_criacao.sql`.
 4. Configure a senha no arquivo `src/server/db.js`.
 5. Inicie o servidor: `node app.js`
+
+A base do relato foi feito com IA, mas reescrevi boa parte e adicionei partes que particularmente me fizeram sentindo ao decorrer do ano.
